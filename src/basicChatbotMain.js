@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const userMessage = input.value.trim();
     if (!userMessage) return;
 
-    addMessage("👤", userMessage);
+    addMessage("🐰", userMessage);
     input.value = "";
     input.focus();
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Enter 키로 전송, Shift+Enter는 줄바꿈
   input.addEventListener("keydown", (event) => {
     if (event.isComposing) return;
-    
+
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       sendBtn.click();
