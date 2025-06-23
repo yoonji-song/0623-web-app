@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addMessage("👤", userMessage);
     input.value = "";
+    input.focus();
 
     try {
       const response = await fetch(ENDPOINT, {
