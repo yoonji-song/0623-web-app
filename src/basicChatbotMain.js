@@ -37,10 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // ✅ Enter 키로 전송, Shift+Enter는 줄바꿈
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      sendBtn.click();
+    }
+  });
+
   function addMessage(sender, text) {
     const msg = document.createElement("div");
     msg.textContent = `${sender} ${text}`;
     chatbox.appendChild(msg);
-    chatbox.scrollTop = chatbox.scrollHeight;
+    chatbox.scrollTop = chatbox.scrollHeight; // ⬇️ 스크롤 자동 하단 이동
   }
 });
